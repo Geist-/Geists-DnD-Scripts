@@ -653,8 +653,8 @@ ClassList.gunslinger = {
 					"I regain 1 expended grit point whenever I score a critical hit against a hostile creature, and I regain all expended grit points when I finish a short or long rest."
 				]),
 				limfeaname : "Grit Points",
-				usages : "1 + Charisma modifier per ",
-				usagescalc : "event.value = 1 + What('Cha Mod');",
+				usages : "1 + Wisdom modifier per ",
+				usagescalc : "event.value = 1 + What('Wis Mod');",
 				recovery : "short rest",
 				"buck up" : {
 					name : "Buck Up",
@@ -710,7 +710,7 @@ ClassList.gunslinger = {
 				name : "Ace in the Hole",
 				source : ["HA:G", 6],
 				minlevel : 7,
-				description : desc("Once per turn when I miss with an attack roll, I can spend 1 grit point to add my Charisma modifier to the roll."),
+				description : desc("Once per turn when I miss with an attack roll, I can spend 1 grit point to add my Wisdom modifier to the roll."),
 			},
 			"born lucky" : {
 				name : "Born Lucky",
