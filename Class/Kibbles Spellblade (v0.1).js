@@ -9,7 +9,7 @@
 	Subject:	Class
 	Effect:		This script adds the Spellblade class, a homebrew creation by KibblesTasty. This script is in-progress and currently only contains the Swiftblade subclass.
 				Their content can be downloaded at https://www.kthomebrew.com/
-	Code by:	u/geist-, with contributions from MorePurpleMoreBetter (MPMB)
+	Code by:	Geist
 	Date:		01-02-2024 (sheet v13)
 */
 
