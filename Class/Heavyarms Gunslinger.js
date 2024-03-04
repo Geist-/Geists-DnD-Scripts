@@ -826,14 +826,18 @@ AddSubClass("gunslinger", "ha:gsbeastrider", {
             minlevel: 3,
             description:
                 "Whether through hard work or natural talent, I possess a level and breadth of skill few can match. I gain proficiency in two skills of my choice from the gunslinger skill list, one of which should be Animal Handling if I am not already proficient in it. In addition, choose one of my skill proficiencies. my proficiency bonus is doubled for any ability check I make that uses the chosen skill.",
-        },
-        "subclassfeature3.1" : {
+		skillstxt : {
+			primary : "Choose two additional skills from the gunslinger skill list. Choose one skill I have proficiency in to gain expertise."
+		},
+	},
+	    "subclassfeature3.1" : {
             name: "Broncbuster",
             source: ["HA:G", 8],
             minlevel: 3,
             description:
-                "As an action, I can touch a Beast that is at least one size larger than I and that has an appropriate anatomy to serve as a mount. It must succeed on a Wisdom saving throw (DC equal to 8 + my proficiency bonus + my Wisdom modifier) or become charmed by I until I dismiss it, I use this feature to charm a different creature, or I die. While charmed in this way, the target is friendly to I and acts under my control while I am riding it. A creature that successfully saves against this effect is immune to it for 24 hours, after which time it can be affected again. A creature I am fighting automatically succeeds on the saving throw. See book for more details.",
-        },
+                "As an action, I can touch a Beast that is at least one size larger than I and that has an appropriate anatomy to serve as a mount. It must succeed on a Wisdom saving throw (DC equal to 8 + my proficiency bonus + my Wisdom modifier) or become charmed by me until I dismiss it, I use this feature to charm a different creature, or I die. While charmed in this way, the target is friendly to I and acts under my control while I am riding it. A creature that successfully saves against this effect is immune to it for 24 hours, after which time it can be affected again. A creature I am fighting automatically succeeds on the saving throw. See book for more details.",
+		    action : ["action", ""]
+	    },
         "subclassfeature6" : {
             name: "Rough Rider",
             source: ["HA:G", 8],
@@ -847,6 +851,7 @@ AddSubClass("gunslinger", "ha:gsbeastrider", {
             minlevel: 6,
             description:
                 "When a creature I can see hits my mount with an attack, I can spend 1 grit point as a reaction to halve the attack's damage against it.",
+		action : ["reaction", ""]
         },
         "subclassfeature10" : {
             name: "Blazing Saddles",
