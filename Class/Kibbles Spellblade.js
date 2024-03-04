@@ -10,15 +10,13 @@
 	Effect:		This script adds the Spellblade class, a homebrew creation by KibblesTasty. This script is in-progress and currently only contains the Swiftblade subclass.
 				Their content can be downloaded at https://www.kthomebrew.com/
 	Code by:	Geist
-	Date:		01-02-2024 (sheet v13)
+	Date:		2024-03-04 (sheet v13.1.12)
 */
 
-var iFileName = "Occultist Class v1.4.1 [By KibblesTasty, transcribed by decoratedboar].js";
-
-RequiredSheetVersion("13.1.12");
+var iFileName = "Kibbles Spellblade.js";
 
 SourceList["KCLL"] = {
-	name : "Kibbles' Compendium of Legends and Legacies (v0.4)",
+	name : "Kibbles' Compendium of Legends and Legacies (v0.6)",
 	abbreviation : "KCLL",
 	group : "KibblesTasty",
 	url : "https://www.kthomebrew.com/",
