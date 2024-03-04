@@ -1,21 +1,21 @@
 /*	-WHAT IS THIS?-
 	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
 	Import this file using the "Add Extra Materials" bookmark.
-
 	-KEEP IN MIND-
 	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
 */
 
 /*	-INFORMATION-
-	Subject:	Race
-	Effect:		This script adds the class "Gunslinger" and its 5 subclasses
- 	Source: 	https://www.heavyarms.com/products/gunslinger?variant=40542343102628
-	Code by:	Geist
-	Date:		2024-03-01 (sheet v13.1.12)
+	Subject:	Class and Subclasses
+	Effect:		This script adds the Gunslinger Class and its Subclasses from Heavyarms' Gunslinger Class.
+				If you intend to use this script, please consider supporting the creator at https://www.heavyarms.com/products/gunslinger?variant=40542343102628
+				This script uses version v1.11, the latest edition released as of 2024/03/04
 
+	Code by:	Geist
+	Date:		2024-03-04 (sheet v13.1.12)
 */
 
-var iFileName = "Heavyarms Gunslinger.js";
+var iFileName = "ha-gunslinger.js";
 RequiredSheetVersion("13.1.7");
 SourceList["HA:G"] = {
     name: "Heavy Arms: Gunslinger",
@@ -669,8 +669,8 @@ ClassList.gunslinger = {
 					"I regain 1 expended grit point whenever I score a critical hit against a hostile creature, and I regain all expended grit points when I finish a short or long rest."
 				]),
 				limfeaname : "Grit Points",
-				usages : "1 + Wisdom modifier per ",
-				usagescalc : "event.value = 1 + What('Wis Mod');",
+				usages : "1 + Charisma modifier per ",
+				usagescalc : "event.value = 1 + What('Cha Mod');",
 				recovery : "short rest",
 				"buck up" : {
 					name : "Buck Up",
@@ -726,7 +726,7 @@ ClassList.gunslinger = {
 				name : "Ace in the Hole",
 				source : ["HA:G", 6],
 				minlevel : 7,
-				description : desc("Once per turn when I miss with an attack roll, I can spend 1 grit point to add my Wisdom modifier to the roll."),
+				description : desc("Once per turn when I miss with an attack roll, I can spend 1 grit point to add my Charisma modifier to the roll."),
 			},
 			"born lucky" : {
 				name : "Born Lucky",
@@ -815,10 +815,10 @@ AddSubClass("gunslinger", "ha:gsmaverick", {
     },
 });
 AddSubClass("gunslinger", "ha:gsbeastrider", {
-    regExpSearch: /^(?=.*beastrider).*$/i,
-    subname: "Beastrider",
+    regExpSearch: /^(?=.*beast rider).*$/i,
+    subname: "Beast Rider",
     source: ["HA:G", 8],
-    fullname: "Beastrider",
+    fullname: "Beast Rider",
     features: {
         "subclassfeature3" : {
             name: "To the Manor Born",
@@ -826,18 +826,16 @@ AddSubClass("gunslinger", "ha:gsbeastrider", {
             minlevel: 3,
             description:
                 "Whether through hard work or natural talent, I possess a level and breadth of skill few can match. I gain proficiency in two skills of my choice from the gunslinger skill list, one of which should be Animal Handling if I am not already proficient in it. In addition, choose one of my skill proficiencies. my proficiency bonus is doubled for any ability check I make that uses the chosen skill.",
-		skillstxt : {
-			primary : "Choose two additional skills from the gunslinger skill list. Choose one skill I have proficiency in to gain expertise."
-		},
-	},
-	    "subclassfeature3.1" : {
+			skillstxt : "Choose two additional skills from the gunslinger skill list. Choose one skill I have proficiency in to gain expertise."
+        },
+        "subclassfeature3.1" : {
             name: "Broncbuster",
             source: ["HA:G", 8],
             minlevel: 3,
             description:
                 "As an action, I can touch a Beast that is at least one size larger than I and that has an appropriate anatomy to serve as a mount. It must succeed on a Wisdom saving throw (DC equal to 8 + my proficiency bonus + my Wisdom modifier) or become charmed by me until I dismiss it, I use this feature to charm a different creature, or I die. While charmed in this way, the target is friendly to I and acts under my control while I am riding it. A creature that successfully saves against this effect is immune to it for 24 hours, after which time it can be affected again. A creature I am fighting automatically succeeds on the saving throw. See book for more details.",
-		    action : ["action", ""]
-	    },
+			action : ["action", ""]
+        },
         "subclassfeature6" : {
             name: "Rough Rider",
             source: ["HA:G", 8],
@@ -851,7 +849,7 @@ AddSubClass("gunslinger", "ha:gsbeastrider", {
             minlevel: 6,
             description:
                 "When a creature I can see hits my mount with an attack, I can spend 1 grit point as a reaction to halve the attack's damage against it.",
-		action : ["reaction", ""]
+			action : ["reaction", ""]
         },
         "subclassfeature10" : {
             name: "Blazing Saddles",
@@ -881,6 +879,7 @@ AddSubClass("gunslinger", "ha:gsenforcer", {
             minlevel: 3,
             description:
                 "I learn the telltale signs of dishonesty and evasiveness. I gain proficiency in the Insight skill. If I already have this proficiency, I gain proficiency in another skill of my choice from the gunslinger skill list instead. my proficiency bonus is doubled for any ability check I make to determine the motive or intent of a Humanoid that uses Insight.",
+			skills : ["Insight"],
         },
         "subclassfeature3.1" : {
             name: "Double Tough",
@@ -894,7 +893,7 @@ AddSubClass("gunslinger", "ha:gsenforcer", {
             source: ["HA:G", 8],
             minlevel: 3,
             description:
-                "If my first attack on my turn hits a creature that attacked I or targeted I with a spell or other harmful effect since the end of my last turn, I can roll one additional weapon damage die and add it to the damage of my attack.",
+                "If my first attack on my turn hits a creature that attacked me or targeted me with a spell or other harmful effect since the end of my last turn, I can roll one additional weapon damage die and add it to the damage of my attack.",
         },
         "subclassfeature6" : {
             name: "Sharp Eye",
@@ -902,6 +901,7 @@ AddSubClass("gunslinger", "ha:gsenforcer", {
             minlevel: 6,
             description:
                 "Experience and necessity have honed my ability to discern my surroundings at a glance. I can take the Search action as a bonus action on my turn. In addition, while I am resting, or I am engaged in another activity while traveling (such as foraging, navigating, or tracking), I remain alert to danger.",
+			action : ["action", ""],			
         },
         "subclassfeature10" : {
             name: "Hard Case",
@@ -924,6 +924,15 @@ AddSubClass("gunslinger", "ha:gspreacher", {
     subname: "Preacher",
     source: ["HA:G", 9],
     fullname: "Preacher",
+	abilitySave : 5,
+	spellcastingFactor : 3,
+	spellcastingList : {
+		"class" : "cleric",
+		level : [0]
+	},
+	spellcastingKnown : {
+		cantrips : [2],
+	},
     features: {
         "subclassfeature3" : {
             name: "Man of the Cloth",
@@ -931,6 +940,7 @@ AddSubClass("gunslinger", "ha:gspreacher", {
             minlevel: 3,
             description:
                 "I have proven myself worthy to take my god's holy vows. I gain proficiency in the Religion skill. If I already have this proficiency, I gain proficiency in one skill of my choice from the gunslinger skill list instead. In addition, I learn two cantrips of my choice from the cleric spell list. Wisdom is my spellcasting ability for these spells.",
+			skills : ["Religion"],
         },
         "subclassfeature3.1" : {
             name: "Sacrifice",
@@ -944,7 +954,7 @@ AddSubClass("gunslinger", "ha:gspreacher", {
             source: ["HA:G", 7],
             minlevel: 6,
             description:
-                "my unwavering resolve is a balm to my spirit. At the end of a long rest, I regain all spent Hit Dice, instead of up to half my total number of them.",
+                "My unwavering resolve is a balm to my spirit. At the end of a long rest, I regain all spent Hit Dice, instead of up to half my total number of them.",
         },
         "subclassfeature10" : {
             name: "Cleanse",
@@ -974,6 +984,7 @@ AddSubClass("gunslinger", "ha:gsrevelator", {
             minlevel: 3,
             description:
                 "I arm myself with knowledge of evil and its crooked ways. I gain proficiency in one of the following skills of my choice: Arcana, History, or Religion. my proficiency bonus is doubled for any Intelligence check I make to recall information about Fiends or Undead.",
+			skillstxt: "Choose one from Arcana, History, or Religion.",
         },
         "subclassfeature3.1" : {
             name: "Consecrate Arms",
@@ -981,6 +992,7 @@ AddSubClass("gunslinger", "ha:gsrevelator", {
             minlevel: 3,
             description:
                 "As an action, I can touch a willing creature and utter a prayer to sanctify it. Whenever that creature hits with a weapon attack, the attack deals radiant damage instead of the weapon's normal damage type. This benefit lasts until the creature dismisses it (no action required), the creature dies, or it finishes a short or long rest. I can use this feature a number of times equal to my Wisdom modifier (minimum of once), and I regain all expended uses when I finish a long rest.",
+			action : ["action", ""],
         },
         "subclassfeature3.2" : {
             name: "Baptism of Fire",
@@ -995,6 +1007,12 @@ AddSubClass("gunslinger", "ha:gsrevelator", {
             minlevel: 6,
             description:
                 "I develop a keen instinct for the presence or influence of outsiders and undead. I am always under the effect of a detect evil and good spell, and I always know when I am in the lair of an Aberration, Celestial, Elemental, Fey, Fiend, or Undead.",
+			spellcastingBonus : [{
+				name : "Dead Reckoning",
+				spells : ["detect evil and good"],
+				selection : ["detect evil and good"],
+				firstCol : "atwill",
+			}],
         },
         "subclassfeature10" : {
             name: "Spirit Shackles",
