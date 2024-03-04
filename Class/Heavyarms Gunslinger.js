@@ -1,5 +1,21 @@
-if (sheetVersion < 13001007) { throw "This script was made for a newer version of the sheet (v13.1.7). Please use the latest version and try again.\nYou can get the latest version at www.flapkan.com."; };
-var iFileName = "ha-gunslinger.js";
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Race
+	Effect:		This script adds the class "Gunslinger" and its 5 subclasses
+ 	Source: 	https://www.heavyarms.com/products/gunslinger?variant=40542343102628
+	Code by:	Geist
+	Date:		2024-03-01 (sheet v13.1.12)
+
+*/
+
+var iFileName = "Heavyarms Gunslinger.js";
 RequiredSheetVersion("13.1.7");
 SourceList["HA:G"] = {
     name: "Heavy Arms: Gunslinger",
