@@ -710,6 +710,16 @@ ClassList.gunslinger = {
 					extrachoice : "dodge roll"
 				}]
 			},
+			"quickdraw" : {
+				name : "Quickdraw",
+				source : ["HA:G", 6],
+				minlevel : 1,
+				description : desc([
+					"You have advantage on initiative rolls. In addition, whenever you draw or stow a firearm, you can draw or stow any",
+					"number of weapons as part of the same move or action."
+				])
+				advantages : [["Initiative", true]],
+			},
 			"subclassfeature3" : {
 				name : "Gunslinger Trails",
 				source : ["HA:G", 6],
