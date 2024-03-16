@@ -15,7 +15,7 @@
 	Date:		2024-03-04 (sheet v13.1.12)
 */
 
-var iFileName = "ha-gunslinger.js";
+var iFileName = "Heavyarms Gunslinger.js";
 RequiredSheetVersion("13.1.7");
 SourceList["HA:G"] = {
     name: "Heavy Arms: Gunslinger",
